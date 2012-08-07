@@ -1,0 +1,450 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@charset "utf-8";
+/* ==|=======================================================================
+   Author: FABIAN CARLOS --- email: FABIAN.POW@GMAIL.COM
+   ========================================================================== */
+
+
+/* 
+  PRESETS & HTML5 Boilerplate
+  ===========================================================================*/
+* { margin:0px; padding:0px; }
+
+html { font-size: 80%; overflow-y: scroll; -webkit-overflow-scrolling: touch; -webkit-tap-highlight-color: rgba(0,0,0,0); -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;  }
+html, button, input, select, textarea { font-family: sans-serif; color: #222; }
+body { margin: 0; font-size: 1em; line-height: 1.4; }
+
+/* =============================================================================
+   HTML5 display definitions
+   ========================================================================== */
+
+article, aside, figcaption, figure, footer, header, nav, hgroup ,section { display: block; }
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio:not([controls]) { display: none; }
+[hidden] { display: none; }
+
+body { margin:0px; padding:0px; background-color: transparent; position: relative; height:100%; width:100%; top:0; left:0; -webkit-font-smoothing: antialiased; -moz-font-smoothing: antialiased; -o-font-smoothing: antialiased; -ms-font-smoothing: antialiased;font-smoothing: antialiased; }
+
+/* text selecteds hot pink boilerplate */
+::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
+::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+
+a { color: #00e; text-decoration: none;  }
+a:visited { color: #551a8b; }
+a:hover { color: #06e; }
+a:focus { outline: thin dotted; }
+/* Improve readability when focused and hovered in all browsers: h5bp.com/h */
+a:hover, a:active { outline: 0; }
+
+/* =============================================================================
+   Typography
+   ========================================================================== */
+
+abbr[title]{ cursor: help; border-bottom: 1px dotted; }
+label { cursor: pointer; }
+
+b, strong { font-weight: bold; }
+
+blockquote { margin: 1em 40px; }
+
+dfn { font-style: italic; }
+
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+
+ins { background: #ff9; color: #000; text-decoration: none; }
+
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+
+/* Redeclare monospace font family: h5bp.com/j */
+pre, code, kbd, samp { font-family: monospace, serif; _font-family: 'courier new', monospace; font-size: 1em; }
+
+/* Improve readability of pre-formatted text in all browsers */
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+
+q { quotes: none; }
+q:before, q:after { content: ""; content: none; }
+
+small { font-size: 85%; }
+
+/* Position subscript and superscript content without affecting line-height: h5bp.com/k */
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+
+/* =============================================================================
+   Lists
+   ========================================================================== */
+
+ul, ol { margin: 1em 0; padding: 0 0 0 10px; }
+dd { margin: 0 0 0 40px; }
+nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
+
+/*
+ * 1. Improve image quality when scaled in IE7: h5bp.com/d
+ * 2. Remove the gap between images and borders on image containers: h5bp.com/i/440
+ */
+
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+
+/*
+ * Correct overflow not hidden in IE9
+ */
+
+svg:not(:root) { overflow: hidden; }
+
+/* =============================================================================
+   Figures
+   ========================================================================== */
+
+figure { margin: 0; }
+
+/* =============================================================================
+   Forms
+   ========================================================================== */
+
+form { margin: 0; }
+fieldset { border: 0; margin: 0; padding: 0; }
+
+/* Indicate that 'label' will shift focus to the associated form element */
+label { cursor: pointer; }
+
+/*
+ * 1. Correct color not inheriting in IE6/7/8/9
+ * 2. Correct alignment displayed oddly in IE6/7
+ */
+
+legend { border: 0; *margin-left: -7px; padding: 0; white-space: normal; }
+/*
+ * 1. Correct font-size not inheriting in all browsers
+ * 2. Remove margins in FF3/4 S5 Chrome
+ * 3. Define consistent vertical alignment display in all browsers
+ */
+
+button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
+
+/*
+ * 1. Define line-height as normal to match FF3/4 (set using !important in the UA stylesheet)
+ */
+
+button, input { line-height: normal; }
+
+/*
+ * 1. Display hand cursor for clickable form elements
+ * 2. Allow styling of clickable form elements in iOS
+ * 3. Correct inner spacing displayed oddly in IE7 (doesn't effect IE6)
+ */
+
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; *overflow: visible; }
+
+/*
+ * Re-set default cursor for disabled elements
+ */
+
+button[disabled], input[disabled] { cursor: default; }
+
+/*
+ * Consistent box sizing and appearance
+ */
+
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; *width: 13px; *height: 13px; }
+input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; }
+
+/*
+ * Remove inner padding and border in FF3/4: h5bp.com/l
+ */
+
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+
+/*
+ * 1. Remove default vertical scrollbar in IE6/7/8/9
+ * 2. Allow only vertical resizing
+ */
+
+textarea { overflow: auto; vertical-align: top; resize: vertical; }
+
+/* Colors for form validity */
+input:valid, textarea:valid {  }
+input:invalid, textarea:invalid { background-color: #f0dddd; }
+
+
+/* =============================================================================
+   Tables
+   ========================================================================== */
+
+table { border-collapse: collapse; border-spacing: 0; }
+td { vertical-align: top; }
+
+/* =============================================================================
+   Chrome Frame Prompt
+   ========================================================================== */
+
+.chromeframe { margin: 0.2em 0; background: #ccc; color: black; padding: 0.2em 0; }
+
+
+/* ==|== media queries ======================================================
+   EXAMPLE Media Query for Responsive Design.
+   This example overrides the primary ('mobile first') styles
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+
+/* ==|== non-semantic helper classes ========================================
+   Please define your styles before this section.
+   ========================================================================== */
+
+/* For image replacement */
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; *line-height: 0; }
+.ir br { display: none; }
+
+/* Hide from both screenreaders and browsers: h5bp.com/u */
+.hidden { display: none !important; visibility: hidden; }
+
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible { visibility: hidden; }
+
+/* Contain floats: h5bp.com/q */
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
+
+
+/* ==|== print styles =======================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+  * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
+  a, a:visited { text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } /* h5bp.com/t */
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}
+
+
+/* ==|== primary styles =====================================================
+   Author: FABIAN CARLOS --- email: FABIAN.POW@GMAIL.COM
+   ========================================================================== */
+
+/* Text Font and Color CUSTOM */
+body, button, input, select, textarea { font:13px Tahoma, Verdana, Arial; color:#444444; }
+
+/* remove the highlight on a html input text element */
+textarea:focus, input:focus, select:focus, a:focus, img:focus { outline: none;  }
+
+/* fix floats in floated elements & fix to a element to a block */
+.clear{ clear: both; }
+.block { display: block; }
+.left { float: left; }
+.right { float: right; }
+
+.spacing_left { margin-left: 30px; }
+
+.w_160{ width:160px; }
+.w_220{ width:220px; }
+.w_490{ width:490px; }
+
+
+/* to opacity */
+.transparent { zoom: 1; filter: alpha(opacity=20); opacity: 0.2; }
+
+/* =============================================================================
+   HEADER
+   ========================================================================== */
+header{ position: fixed; top: 0px; left: 80px; }
+
+
+/* =============================================================================
+   TODO
+   ========================================================================== */
+
+#todo{ max-width: 1100px; height: auto; margin: 0 auto; position: relative; }
+
+
+/* =============================================================================
+   CONTEUDO
+   ========================================================================== */
+
+section#conteudo{ width: 1100px; height: 190px; position: absolute; top: 0; padding-bottom: 30px; z-index: 999; background: #f4f4f4; border: 1px solid #bbb;  }
+
+section#conteudo #elemento_info div.elemento{ width: 100px; height: 110px; text-align: center; border: 6px solid #333; padding-top: 20px; margin: 15px 10px 10px 20px; position: relative; border-radius: 10px; -webkit-border-radius: 10px; -moz-border-radius: 10px; -khtml-border-radius: 10px; }
+
+section#conteudo #elemento_info div.elemento .nome{ display: block; font-size: 16px; }
+
+section#conteudo #elemento_info div.elemento .simbolo{ font-size: 50px; }
+
+section#conteudo #elemento_info div.elemento .m_ato{ font-size: 20px; }
+
+section#conteudo #elemento_info div.elemento .ato{ font-size: 16px; color: #fff; background: #333; padding: 0px 0px 5px 5px; position: absolute; top: -3px; right: 0px; -webkit-border-radius: 0px 0px 0px 6px; border-radius: 0px 0px 0px 6px; -moz-border-radius: 0px 0px 0px 6px; -khtml-border-radius: 0px 0px 0px 6px; }
+
+
+/* informações gerais */
+section#conteudo #elemento_info article.informacoes_gerais{ width: 370px; margin: 15px 20px 10px 0px; float: left; }
+
+section#conteudo #elemento_info article.informacoes_gerais table{ width: 100%; }
+
+section#conteudo #elemento_info article.informacoes_gerais table tr{ display: block; height: 20px; }
+
+section#conteudo #elemento_info article.informacoes_gerais table thead{ float: left; }
+section#conteudo #elemento_info article.informacoes_gerais table thead tr th{ width: 100%; color: #666; padding: 6px 0px; }
+
+section#conteudo #elemento_info article.informacoes_gerais table tbody{ float: right;  }
+section#conteudo #elemento_info article.informacoes_gerais table tbody tr td{  padding: 5px 5px 0px 0px; }
+
+/* propriedades atomicas */
+section#conteudo #elemento_info article.propriedades_atomicas{ width: 290px; margin: 15px 10px 10px 0px; float: left; }
+
+section#conteudo #elemento_info article.propriedades_atomicas table{ width: 100%; }
+
+section#conteudo #elemento_info article.propriedades_atomicas table tr{ display: block; height: 20px; }
+
+section#conteudo #elemento_info article.propriedades_atomicas table thead{ float: left; }
+section#conteudo #elemento_info article.propriedades_atomicas table thead tr th{ width: 100%; color: #666; padding: 6px 0px; }
+
+section#conteudo #elemento_info article.propriedades_atomicas table tbody{ float: right;  }
+section#conteudo #elemento_info article.propriedades_atomicas table tbody tr td{  padding: 5px 5px 0px 0px; }
+
+
+/* 
+   SUBLINKS
+   ========================================================================== */
+nav#sublinks{ border: 2px solid #bbb; position: absolute; bottom: 0; z-index: 999; }
+
+nav#sublinks ul{ display: block; }
+
+nav#sublinks ul li{ font-size: 14px; padding: 0px 20px; line-height: 30px; background: #ccc; float: left; }
+
+nav#sublinks ul li:hover{ background: #ddd; }
+
+/* =============================================================================
+   TABELA
+   ========================================================================== */
+
+section#tabela{ width: 100%; height: 700px; position: absolute; padding-top: 250px; }
+
+section#tabela .line{ width: 100%; height: 64px; float: left; }
+
+section#tabela .line h2{ width: 120px; float: left; padding: 20px 20px 0px 0px; }
+
+section#tabela .line .elemento{ display: block; width: 60px; height: 45px; text-align: center; margin: 3px; padding-top: 10px; border: 3px solid #444; position: relative; border-radius: 6px; -webkit-border-radius: 6px; -moz-border-radius: 6px; }
+
+section#tabela .line .elemento .simb{ font-size: 35px; color: #333;  }
+
+section#tabela .line .elemento .simb_pequeno{ font-size: 15px; color: #333; }
+
+section#tabela .line .elemento .ato{ font-size: 16px; color: #fff; position: absolute; top: 0px; right: 4px; }
+
+section#tabela .line .elemento .m_ato{ display: none; }
+
+
+
+/* =============================================================================
+   TIPOS E ESTADOS
+   ========================================================================== */
+
+aside#tipos_estados{ width: 600px; height: 200px; position: absolute; top: 240px; left: 140px; z-index: 999; background: #fff; border-radius: 6px; -webkit-border-radius: 6px; -moz-border-radius: 6px; }
+
+aside#tipos_estados ul.coluna_01{ width: 180px; display: block; float: left; }
+
+aside#tipos_estados ul.coluna_02{ width: 180px; display: block; float: left; }
+
+aside#tipos_estados ul.coluna_03{ width: 180px; display: block; float: left; }
+
+aside#tipos_estados ul li{ width: 150px; line-height: 25px; margin: 3px; list-style: none; float: left; }
+
+aside#tipos_estados ul li a{ display: block; width: 170px; height: 25px; color: #fff; font-weight: bold; padding: 0px 5px 0px 5px; border: 3px solid #333; border-radius: 6px; -webkit-border-radius: 6px; -moz-border-radius: 6px; }
+
+aside#tipos_estados ul li a:hover{ color: #333; }
+
+/* =============================================================================
+   TIPOS
+   ========================================================================== */
+
+.m_alcalinos{ background: #4095ff; }
+
+.m_alcalino_terrosos{ background: #00ccff; }
+
+.m_transicao{ background: #89A11E; }
+
+.lantanideos{ background: #FA8; }
+
+.actinideos{ background: #DAC; }
+
+.m_representativos{ background: #9BA; }
+
+.semi_metais{ background: #9F131F; }
+
+.nao_metais{ background: #ff6f6f; }
+
+.halogenios{ background: #0DB;}
+
+.gases_nobres{ background: #E89B34;  }
+
+
+/* =============================================================================
+   ELEMENTOS
+   ========================================================================== */
+
+/* periodo 1 */
+#hidrogenio{ float: left; }
+
+#helio{ float: right; }
+
+
+/* periodo 2 */
+#litio, #berilio{ float: left; }
+
+
+/* periodo 3 */
+#sodio, #magnesio{ float: left; }
+
+
+/* periodo 4 */
+#potassio, #calcio, #escandio, #titanio, #vanadio, #cromo, #manganes, #ferro, #cobalto, #niquel, #cobre, #zinco{ float: left; }
+
+
+/* periodo 5 */
+#rubidio, #estroncio, #itrio, #zirconico, #niobio, #molibdemio, #tecnicio, #rutenio, #rodio, #paladio, #prata, #cadmio{ float: left; }
+
+/* periodo 6 */
+#cesio, #bario, #lantanideos{ float: left; }
+
+/* periodo 7 */
+
+#francio, #radio, #actinideos{ float: left; }
+
+/* periodo latanideos */
+
+
+#lantanio{ float: left; }
+
+#cerio{ float: left; }
+
+
+/* periodo actinideos */
+
+#actinio{ float: left; }
+
+#torio{ float: left; }
