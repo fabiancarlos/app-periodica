@@ -59,21 +59,14 @@ jQuery(function($){
 	$('section#tabela .line .elemento, nav#sublinks ul li a').click(function(event){
 		event.preventDefault();
 
-		$('#toggle_conteudo').text('Ocultar informações ↑');
-		$('section#conteudo, section#tabela').animate({'top': '0px'});
+		$('section#conteudo').fadeIn();
+		$('section#tabela').animate({'top': '0px'});
 	});
 
-	// click para fechar bloco 'conteudo'
-	$('#toggle_conteudo').toggle(function(event){
+	$('section#conteudo .fade-off').click(function(event){
 		event.preventDefault();
 
-		$(this).text('Mostrar mais informações ↓');
-		$('section#conteudo, section#tabela').animate({'top': '-190px'});
-	}, function(event){
-		event.preventDefault();
-
-		$(this).text('Ocultar informações ↑');
-		$('section#conteudo, section#tabela').animate({'top': '0px'});
+		$('section#conteudo').fadeOut();
 	});
 	
 });

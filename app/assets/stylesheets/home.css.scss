@@ -287,7 +287,7 @@ header{ position: fixed; top: 0px; left: 80px; }
    CONTEUDO
    ========================================================================== */
 
-section#conteudo{ width: 1100px; height: 190px; position: absolute; top: 0; padding-bottom: 30px; z-index: 999; background: #f4f4f4; border: 1px solid #bbb;  }
+section#conteudo{ width: 1100px; height: 190px; position: fixed; bottom: 50px; padding-bottom: 75px; z-index: 9999; background: rgba(255, 255, 255, 0.9); border: 1px solid #f2f2f2;  box-shadow: 0px 0px 8px #ddd; -webkit-box-shadow: 0px 0px 8px #ddd; -moz-box-shadow: 0px 0px 8px #ddd; border-radius: 14px; -webkit-border-radius: 14px; -moz-border-radius: 14px; -o-border-radius: 14px; -ms-border-radius: 14px; }
 
 section#conteudo #elemento_info div.elemento{ width: 100px; height: 110px; text-align: center; border: 6px solid #333; padding-top: 20px; margin: 15px 10px 10px 20px; position: relative; border-radius: 10px; -webkit-border-radius: 10px; -moz-border-radius: 10px; -khtml-border-radius: 10px; }
 
@@ -326,23 +326,40 @@ section#conteudo #elemento_info article.propriedades_atomicas table thead tr th{
 section#conteudo #elemento_info article.propriedades_atomicas table tbody{ float: right;  }
 section#conteudo #elemento_info article.propriedades_atomicas table tbody tr td{  padding: 5px 5px 0px 0px; }
 
+section#conteudo .fade-off{
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 20px;
+  color: black;
+  text-shadow: 0 1px 0 white;
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+  cursor: pointer;
+  position: absolute;
+  top: 6px;
+  right: 10px;
+}
 
 /* 
    SUBLINKS
    ========================================================================== */
-nav#sublinks{ border: 2px solid #bbb; position: absolute; bottom: 0; z-index: 999; }
+nav#sublinks{ position: absolute; left: 10px; bottom: 3px; z-index: 999; }
 
 nav#sublinks ul{ display: block; }
 
-nav#sublinks ul li{ font-size: 14px; padding: 0px 20px; line-height: 30px; background: #ccc; float: left; }
+nav#sublinks ul li{  float: left; }
+  
+  nav#sublinks ul li a{
+   font-size: 16px; font-weight: bold; color: #444; padding: 0px 10px; line-height: 30px; 
+  }
 
-nav#sublinks ul li:hover{ background: #ddd; }
+nav#sublinks ul li:hover{  }
 
 /* =============================================================================
    TABELA
    ========================================================================== */
 
-section#tabela{ width: 100%; height: 700px; position: absolute; padding-top: 250px; }
+section#tabela{ width: 100%; height: 700px; position: absolute; margin-top: 50px; }
 
 section#tabela .line{ width: 100%; height: 64px; float: left; }
 
@@ -370,7 +387,7 @@ section#tabela .line .elemento .title .connect{ position: absolute; top: 8px; le
    TIPOS E ESTADOS
    ========================================================================== */
 
-aside#tipos_estados{ width: 600px; height: 200px; position: absolute; top: 240px; left: 140px; z-index: 999; background: #fff; border-radius: 6px; -webkit-border-radius: 6px; -moz-border-radius: 6px; }
+aside#tipos_estados{ width: 600px; height: 200px; position: absolute; top: -10px; left: 140px; z-index: 999; border-radius: 6px; -webkit-border-radius: 6px; -moz-border-radius: 6px; }
 
 aside#tipos_estados ul.coluna_01{ width: 180px; display: block; float: left; }
 
